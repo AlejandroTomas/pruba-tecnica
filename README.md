@@ -11,7 +11,7 @@ npm run install
 npm run dev
 ```
 ## Live App
-(Buscador de bugs)[https://lighthearted-crepe-c9ae1a.netlify.app/]
+[Buscador de bugs](https://lighthearted-crepe-c9ae1a.netlify.app/)
 ## Librerias usadas
 
 [Zustansd](https://zustand-demo.pmnd.rs/)
