@@ -37,6 +37,7 @@ body {
   top: 0;
   left: 0;
   background-color: #171c30;
+  z-index: 999999;
 }
 .App .header {
   width: 100%;
@@ -86,6 +87,14 @@ body {
   display: flex;
   padding: 10px 0;
   cursor: pointer;
+  position: relative;
+}
+.App .blockList .item--list summary .click-here {
+  display: none;
+  position: absolute;
+  right: 0%;
+  top: -10%;
+  font-size: 1.5rem;
 }
 .App .blockList .item--list summary::marker {
   color: transparent;
@@ -114,10 +123,45 @@ body {
   overflow: hidden;
   background-color: #242F49;
   padding: 1rem;
+  color: white;
 }
 .App .blockList .item--list #description img {
   width: 100%;
   object-fit: cover;
+}
+
+/********** Media queriees **************/
+@media (max-width: 825px) {
+  .blockList {
+    width: 85%;
+  }
+  .blockList .item--list summary {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 480px) {
+  .App .header h1 {
+    font-size: 1.2rem;
+  }
+  .App .searcher .searcher--input {
+    width: 60%;
+  }
+  .App .blockList .item--list summary {
+    justify-content: space-between;
+  }
+  .App .blockList .item--list summary .click-here {
+    display: block;
+  }
+  .App .blockList .item--list summary #date {
+    width: 50%;
+  }
+  .App .blockList .item--list summary #date svg {
+    width: 10%;
+    font-size: 2rem;
+  }
+  .App .blockList .item--list summary #owener {
+    width: 50%;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

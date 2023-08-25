@@ -28,7 +28,8 @@ export const useIssuesStorage = create((set)=>({
 function App() {
   const [setData] = useIssuesStorage((state) => [state.setData]);
   const [flagControl, setFlagControl] = useState(1);
-  
+  //Se hace lapeticion las veces que sea necesarias para traer todos los datos
+  //lo hice de esta manera ya que la api de git permile un maximo de 100 datos por peticione
   useEffect(() => {
     axios({
       url :`https://api.github.com/repos/facebook/react/issues?labels=Type: Bug&per_page=100&page=${flagControl}`,
@@ -46,10 +47,11 @@ function App() {
           date:issue.created_at.slice(0,10),
           owener:issue.user.login
         }));
+        //Se pone los datos en un estado global creado con zustands
         setData(result)
-        
+        //evalua si los datos son menores a 100 ya que eso significa que son todos los datos 
         if(result.length < 100){
-          return 0  ;
+          return 0;
         }else{
           setFlagControl(flagControl+1)
         }

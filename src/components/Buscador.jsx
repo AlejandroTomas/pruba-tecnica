@@ -5,13 +5,13 @@ import { useDebounce } from '../hooks/useDebounce';
 
 
 const Buscador = () => {
-  let debounceRef = useRef()
-
-  
+//controlador del imput
   const [inputVal, setInputVal] = useState({
     search:""
   });
+//Custom hook debounce
   const debounceValue = useDebounce(inputVal.search,500)
+
   const [setSearch] = useIssuesStorage((state) => [state.setSearch]);
 
   const handleChange = (e) =>{
@@ -26,8 +26,8 @@ const Buscador = () => {
   const handleKey = (e)=>{
     if(e.code === "Enter"){
       const {name, value } = e.target;
-      console.log(name)
       setInputVal({...inputVal, [name]:value.toLowerCase()})
+      //Seteamos la busqueda en el contexto global
       setSearch(inputVal.search)
     }
   }
