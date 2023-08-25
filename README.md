@@ -10,7 +10,8 @@ Para ejecutar el proyecto:
 npm run install
 npm run dev
 ```
-
+## Live App
+(Buscador de bugs)[https://lighthearted-crepe-c9ae1a.netlify.app/]
 ## Librerias usadas
 
 [Zustansd](https://zustand-demo.pmnd.rs/)
@@ -27,3 +28,5 @@ Libreria usada para agregar iconos a la aplicacion, usado por su practicidad.
 [Sass](https://sass-lang.com/)
 
 Libreria usada para facilitar la escritura de los estilos y media queries.
+
+
